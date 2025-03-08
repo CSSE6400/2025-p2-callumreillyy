@@ -3,7 +3,6 @@ from . import db
 
 class Todo(db.Model):
     __tablename__ = 'todos'
-
     # This is how to define a column. This is also the primary key,
     id = db.Column(db.Integer, primary_key=True)
     # This is a mandatory column of 80 chars.
@@ -14,10 +13,10 @@ class Todo(db.Model):
     completed = db.Column(db.Boolean, nullable=False, default=False)
     # Column with a DateTime value.
     deadline_at = db.Column(db.DateTime, nullable=True)
-    # Colum has a default value which is a function call.
-    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
+    # Colum has a default value which is a function call (this means it is inserted when the record is created).
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now())
     # Colum updates on update.
-    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now, onupdate=datetime.datetime.now)
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now(), onupdate=datetime.datetime.now())
     
     # Helper method ot convert the model to a dictionary. This allows lookups by a key value (get()).
     def to_dict(self):
