@@ -10,6 +10,7 @@ class TodoTest(unittest.TestCase):
     
         self.client = self.app.test_client()
 
+    # Ensure the response exists within the data it is trying to fetch
     def assertDictSubset(self, expected_subset: dict, whole: dict):
         for key, value in expected_subset.items():
             self.assertEqual(whole[key], value)
