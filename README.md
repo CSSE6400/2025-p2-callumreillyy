@@ -15,7 +15,7 @@ Also created a helper method to convert the model to a dictionary. This allows l
 
 ## Routing
 
-Heavily modified routing to implement each of the GET, POST, PUT, DELETE api functions.
+Implemented logic for RESTful api actions GET PUT DELETE POST in routes. Ensured all tests passed successfully.
 
 ## Testing
 
